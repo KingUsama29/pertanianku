@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <?php include_once __DIR__ . "/components/layout/header.php" ?>
+  <?php require_once __DIR__ . "/components/layout/header.php" ?>
   <main>
     <section id="hero" class="hero" aria-label="Seksi hero">
       <div class="container">
@@ -17,13 +17,13 @@
         <button class="btn-primary" onclick="document.getElementById('penanganan').scrollIntoView({behavior:'smooth'})">Jelajah Fitur</button>
       </div>
     </section>
-    <?php include_once __DIR__ . "/components/article.php" ?>
-    <?php include_once __DIR__ . "/components/weather.php" ?>
-    <?php include_once __DIR__ . "/components/prices.php" ?>
-    <?php include_once __DIR__ . "/components/contact.php" ?>
+    <?php require_once __DIR__ . "/components/article.php" ?>
+    <?php require_once __DIR__ . "/components/weather.php" ?>
+    <?php require_once __DIR__ . "/components/prices.php" ?>
+    <?php require_once __DIR__ . "/components/contact.php" ?>
     </section>
   </main>
-  <?php include_once __DIR__ . "/components/layout/footer.php" ?>
-  <script src="assets/js/script.js"></script>r
+  <?php require_once __DIR__ . "/components/layout/footer.php" ?>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -9,7 +9,6 @@
     --radius: 0.75rem;
     --transition: 0.3s ease;
     --font-family: 'Poppins', sans-serif;
-
     --color-sun: #f59e0b;
 }
 *, *::before, *::after {
@@ -41,12 +40,15 @@ a:hover, a:focus {
 header {
     position: sticky;
     top: 0;
-    background-color: var(--color-green);
     border-bottom: none;
     z-index: 1000;
-    box-shadow: 0 3px 8px rgba(22, 163, 74, 0.5);
     color: white;
     padding: 0 1rem;
+}
+header.scrolled {
+  background-color: #16a34a; /* Hijau */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Tambahan bayangan */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 nav {
     max-width: 1200px;
@@ -149,18 +151,24 @@ ul.nav-links li a:focus {
 }
 /* Rest of existing styles */
 .hero {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     text-align: center;
-    overflow: hidden;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    box-sizing: border-box;
+    max-width: 720px;
+    margin: 0 auto 4rem;
+    margin-bottom: 250px;
+}
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    line-height: 1.1;
+}
+.hero p {
+    font-size: 1.25rem;
+    color: #fff;
+    max-width: 480px;
     margin: 0 auto;
 }
 .hero::before {
@@ -174,17 +182,7 @@ ul.nav-links li a:focus {
     filter: brightness(0.85);
     transition: filter 0.3s ease;
 }
-.hero_artikel::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-    linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)),
-    url('https://images.unsplash.com/photo-1524486361537-8ad15938e1a3?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
-    z-index: -1;
-    filter: brightness(0.85);
-    transition: filter 0.3s ease;
-}
+
 .hero:hover::before,
 .hero:focus-within::before {
     filter: brightness(0.95);
@@ -229,11 +227,13 @@ ul.nav-links li a:focus {
     transform: scale(1.05);
 }
 .section-container {
-    padding-top: 4rem;
     padding-bottom: 4rem;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+}
+.section-container h2{
+    margin-inline: 10px;
 }
 section + section {
     border-top: 1px solid #e5e7eb;
@@ -249,6 +249,7 @@ section h2 {
     display: grid;
     gap: 1.75rem;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-inline: 10px;
 }
 .card {
     background: var(--color-card-bg);
@@ -348,6 +349,7 @@ section h2 {
     gap: 1.75rem;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     padding: 0;
+    margin-inline: 10px;
 }
 .price-card {
     background: var(--color-card-bg);

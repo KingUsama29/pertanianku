@@ -23,4 +23,4 @@
     <p style="margin-top:1.5rem; color: #fff; font-size: 0.8rem;">
       &copy; 2024 Pertanianku. All rights reserved.
     </p>
-</footer>
+  </footer>

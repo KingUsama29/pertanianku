@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Login & Register - PertanianKu</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  
+  <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
   <div class="auth-wrapper" id="auth-wrapper">
     <section class="form-panel login-panel" aria-labelledby="login-heading" tabindex="0">
       <h2 id="login-heading">Masuk</h2>
-      <form id="loginForm" novalidate>
-        <label for="login-username">Username</label>
-        <input type="text" id="login-username" name="username" placeholder="Masukkan username" required />
-        <label for="login-password">Password</label>
-        <input type="password" id="login-password" name="password" placeholder="Masukkan password" required />
-        <button type="submit">Masuk</button>
+      <form id="loginForm" action="/includes/auth.php" method="post">
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="Masukkan username" required autocomplete="off" />
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Masukkan password" required />
+        <button type="submit" name="login">Masuk</button>
       </form>
       <p class="toggle-link">
         Belum punya akun?
@@ -28,12 +28,12 @@
       <h2 id="register-heading">Daftar</h2>
       <form id="registerForm" novalidate>
         <label for="register-name">Nama Lengkap</label>
-        <input type="text" id="register-name" name="name" placeholder="Masukkan nama lengkap" required />
+        <input type="text" name="name" placeholder="Masukkan nama lengkap" required />
         <label for="register-email">Email</label>
-        <input type="email" id="register-email" name="email" placeholder="Masukkan email" required />
+        <input type="email" name="email" placeholder="Masukkan email" required />
         <label for="register-password">Password</label>
-        <input type="password" id="register-password" name="password" placeholder="Buat password" required />
-        <button type="submit">Daftar</button>
+        <input type="password" name="password" placeholder="Buat password" required />
+        <button type="submit" name="register">Daftar</button>
       </form>
       <p class="toggle-link">
         Sudah punya akun?
