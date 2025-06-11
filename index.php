@@ -1,29 +1,24 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sistem Informasi Pertanian</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-  <?php include_once __DIR__ . "/components/layout/header.php" ?>
-  <main>
-    <section id="hero" class="hero" aria-label="Seksi hero">
-      <div class="container">
-        <h1>Solusi Digital untuk Pertanian Modern</h1>
-        <p>Mengelola pertanian dengan informasi terpercaya dan fitur lengkap untuk hasil lebih maksimal.</p>
-        <button class="btn-primary" onclick="document.getElementById('penanganan').scrollIntoView({behavior:'smooth'})">Jelajah Fitur</button>
-      </div>
-    </section>
-    <?php include_once __DIR__ . "/components/article.php" ?>
-    <?php include_once __DIR__ . "/components/weather.php" ?>
-    <?php include_once __DIR__ . "/components/prices.php" ?>
-    <?php include_once __DIR__ . "/components/contact.php" ?>
-    </section>
-  </main>
-  <?php include_once __DIR__ . "/components/layout/footer.php" ?>
-  <script src="assets/js/script.js"></script>r
-</body>
-</html>
+<?php
+require_once __DIR__ . '/bootstrap/bootstrap.php';
+
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$base = str_replace('/index.php', '', $_SERVER['SCRIPT_NAME']);
+$path = '/' . ltrim(str_replace($base, '', $uri), '/');
+
+$routes = [
+    '/' => 'routes/home.php',
+    '/login' => 'routes/login.php',
+    '/logout' => 'routes/logout.php',
+    '/dashboard' => 'routes/dashboard/index.php',
+    '/dashboard/daftar_petani' => 'routes/dashboard/daftar_petani.php',
+    '/dashboard/hasil_panen' => 'routes/dashboard/hasil_panen.php',
+];
+
+$page = $routes[$path] ?? null;
+
+if ($page && file_exists($page)) {
+    include $page;
+} else {
+    http_response_code(404);
+    echo "<h1>404 - Halaman tidak ditemukan</h1>";
+}
