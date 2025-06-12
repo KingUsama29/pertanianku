@@ -40,9 +40,16 @@ $routes = [
     '/login' => 'routes/login.php',
     '/logout' => 'routes/logout.php',
     '/dashboard' => 'routes/dashboard/index.php',
-    '/dashboard/daftar_petani' => 'routes/dashboard/daftar_petani.php',
+    // Hasil panen
     '/dashboard/hasil_panen' => 'routes/dashboard/hasil_panen.php',
+    '/dashboard/hasil_panen/create' => 'routes/dashboard/action/tambah_hasil_panen.php',
+    '/dashboard/hasil_panen/edit' => 'routes/dashboard/action/edit_hasil_panen.php',
+    '/dashboard/hasil_panen/delete' => 'routes/dashboard/action/hapus_hasil_panen.php',
+    // Artikel
     '/dashboard/artikel' => 'routes/dashboard/artikel.php',
+    '/dashboard/artikel/create' => 'routes/dashboard/action/tambah_artikel.php',
+    '/dashboard/artikel/edit' => 'routes/dashboard/action/edit_artikel.php',
+    '/dashboard/artikel/delete' => 'routes/dashboard/action/hapus_artikel.php'
 ];
 
 // Resolve the requested page from the route map
