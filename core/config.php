@@ -24,7 +24,8 @@ define('BASE_URL', 'http://localhost:8000');
 // Project Root Directory
 // ---------------------------------------------------------------
 // (Optional) Used if application files are inside a subdirectory
-define('PROJECT_ROOT', 'app');
+// define('PROJECT_ROOT', "/app");
+define('APP', './app');
 
 // ---------------------------------------------------------------
 // Database Connection Settings
@@ -33,7 +34,7 @@ define('PROJECT_ROOT', 'app');
 define('DB_HOST', 'localhost');       // Database server host
 define('DB_USER', 'root');            // MySQL username
 define('DB_PASS', '');                // MySQL password
-define('DB_SCHEMA', 'pertanian');     // Database name (schema)
+define('DB_SCHEMA', 'pertanianku');     // Database name (schema)
 
 // ---------------------------------------------------------------
 // Session Configuration

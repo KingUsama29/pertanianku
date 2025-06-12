@@ -42,6 +42,7 @@ $routes = [
     '/dashboard' => 'routes/dashboard/index.php',
     '/dashboard/daftar_petani' => 'routes/dashboard/daftar_petani.php',
     '/dashboard/hasil_panen' => 'routes/dashboard/hasil_panen.php',
+    '/dashboard/artikel' => 'routes/dashboard/artikel.php',
 ];
 
 // Resolve the requested page from the route map

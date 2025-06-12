@@ -5,7 +5,7 @@
         <li><a href="#penanganan">Artikel</a></li>
         <li><a href="#cuaca">Cuaca</a></li>
         <li><a href="#harga">Hasil Panen</a></li>
-        <li><?= isset($_SESSION["username"]) ? '<a href="' . base_url("/dashboard") . '">Dashboard</a>' : '<a href="' . base_url("/login") . '">Login</a>'; ?></li>
+        <li><?= isset($_SESSION["username"]) ? '<a href="/dashboard">Dashboard</a>' : '<a href="/login">Login</a>'; ?></li>
     </ul>
     <div class="hamburger">
         <span></span>

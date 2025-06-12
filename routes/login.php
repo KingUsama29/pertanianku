@@ -14,7 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($users[$username]) && $users[$username]['password'] === $password) {
             $_SESSION['username'] = $username;
             $_SESSION['role'] = $users[$username]['role'];
-            header('Location: ' . base_url('/dashboard'));
+            echo "<script>alert('Login berhasil. Selamat datang, " . $username . "')</script>";
+            echo "<script>window.location.href='/dashboard'</script>";
             exit;
         } else {
             $error = 'Username atau password salah!';
@@ -30,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Login & Register - PertanianKu</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="<?= PROJECT_ROOT ?>/assets/css/login.css">
+  <link rel="stylesheet" href="<?= APP ?>/assets/css/login.css">
 </head>
 <body>
   <div class="auth-wrapper" id="auth-wrapper">

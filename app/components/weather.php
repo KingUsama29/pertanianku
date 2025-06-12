@@ -8,7 +8,6 @@ $data = json_decode($response, true);
 
 ?>
 <section id="cuaca" class="section-container" aria-label="Cuaca">
-  <h2>Cuaca Hari Ini</h2>
   <div class="weather-card" role="region" aria-live="polite" aria-atomic="true">
     <img 
       src="https:<?= $data['current']['condition']['icon'] ?>" 

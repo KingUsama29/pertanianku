@@ -26,13 +26,13 @@ if (session_status() === PHP_SESSION_NONE) {
 // Load Configuration
 // ---------------------------------------------------------------
 // Load global constants like BASE_URL, DB_HOST, etc.
-require_once __DIR__ . 'constants.php';
+require_once __DIR__ . '/config.php';
 
 // ---------------------------------------------------------------
 // Load Database Connection
 // ---------------------------------------------------------------
 // Establish a global PDO connection to the database
-require_once __DIR__ . 'database.php';
+require_once __DIR__ . '/database.php';
 
 // ---------------------------------------------------------------
 // Set Default Timezone
