@@ -1,5 +1,5 @@
 <nav class="container" aria-label="Navigasi utama">
-    <div class="logo" tabindex="0">Pertanianku</div>
+    <div class="logo" tabindex="0">Agritaniku</div>
     <ul class="nav-links">
         <li><a href="/">Beranda</a></li>
         <li><a href="/artikel">Artikel</a></li>

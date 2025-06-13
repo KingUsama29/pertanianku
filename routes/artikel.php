@@ -8,9 +8,10 @@
   <link rel="stylesheet" href="<?= APP ?>/assets/css/style.css">
 </head>
 <body>
-  <?php include_once APP . "/components/layout/header.php" ?>
+  <header>
+    <?php include_once APP . "/components/layout/header.php" ?>
+  </header>
   <main>
-
     <section id="hero" class="hero" aria-label="Seksi hero">
       <div class="container">
         <h1>Membawa Pengetahuan Pertanian ke Ujung Jari Anda</h1>

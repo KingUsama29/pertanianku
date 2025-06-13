@@ -8,11 +8,13 @@
   <link rel="stylesheet" href="<?= APP ?>/assets/css/style.css">
 </head>
 <body>
-  <?php include_once APP . "/components/layout/header.php" ?>
+  <header>
+    <?php include_once APP . "/components/layout/header.php" ?>
+  </header>
   <main>
     <section id="hero" class="hero" aria-label="Seksi hero">
       <div class="container">
-        <h1>Solusi Digital untuk Pertanian Modern</h1>
+        <h1 class="title-home">Solusi Digital untuk Pertanian Modern</h1>
         <p>Mengelola pertanian dengan informasi terpercaya dan fitur lengkap untuk hasil lebih maksimal.</p>
         <!-- <button class="btn-primary" onclick="document.getElementById('penanganan').scrollIntoView({behavior:'smooth'})">Jelajah Fitur</button> -->
       </div>

@@ -46,7 +46,7 @@ header {
     padding: 0 1rem;
 }
 header.scrolled {
-  background-color: #16a34a; /* Hijau */
+  background-color: #15803d; /* Hijau */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Tambahan bayangan */
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -122,11 +122,23 @@ ul.nav-links li a:focus {
 }
 /* Responsive nav menu */
 @media (max-width: 768px) {
+    header{
+        background-color: #15803d;
+    }
+    nav{
+        margin: 0;
+        margin-inline: 25px;
+        margin-top: 15px;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+        position: relative;
+    }
     ul.nav-links {
     position: fixed;
     top: 64px;
     right: 0;
-    background-color: var(--color-green);
+    background-color: #15803d;
     height: calc(100vh - 64px);
     width: 200px;
     flex-direction: column;
@@ -134,9 +146,10 @@ ul.nav-links li a:focus {
     padding-left: 1rem;
     padding-right: 1rem;
     gap: 1rem;
-    box-shadow: -4px 0 12px rgba(0,0,0,0.3);
+    /* box-shadow: -4px 0 12px rgba(0,0,0,0.3); */
     transform: translateX(100%);
     transition: transform 0.3s ease;
+    z-index: 999;
     }
     ul.nav-links.show {
     transform: translateX(0);
@@ -151,19 +164,24 @@ ul.nav-links li a:focus {
 }
 /* Rest of existing styles */
 .hero {
-    padding-top: 4rem;
+    display: flex;
+    align-items: center;
     padding-bottom: 4rem;
     text-align: center;
     max-width: 720px;
     margin: 0 auto 4rem;
-    margin-bottom: 250px;
+    height: 100vh;
 }
-.hero h1 {
+.hero div h1 {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: #fff;
     line-height: 1.1;
+    margin-bottom: 15px;
+}
+.title-home{
+    font-size: 3.8rem !important;
 }
 .hero p {
     font-size: 1.25rem;
