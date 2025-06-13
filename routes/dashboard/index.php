@@ -27,7 +27,7 @@ if (!is_logged_in()) {
 
 <body class="g-sidenav-show   bg-gray-100">
   <div class="min-height-300 bg-dark position-absolute w-100"></div>
-  <?php include_once APP . "/components/layout/sidebar.php" ?>
+  <?php include_once APP . "/components/layout/dashboard/sidebar.php" ?>
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
@@ -63,9 +63,13 @@ if (!is_logged_in()) {
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Jumlah Petani</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Jumlah Admin</p>
                     <h5 class="font-weight-bolder">
-                      10
+                      <?php
+                      $data = mysqli_query($koneksi, "SELECT COUNT(*) as total FROM pengguna");
+                      $result = mysqli_fetch_assoc($data);
+                      echo $result["total"] ?? 0;
+                      ?>
                     </h5>
                   </div>
                 </div>
@@ -84,9 +88,13 @@ if (!is_logged_in()) {
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Jumlah Hasil Panen</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Jumlah Komoditas</p>
                     <h5 class="font-weight-bolder">
-                      5
+                      <?php
+                      $data = mysqli_query($koneksi, "SELECT COUNT(*) as total FROM komoditas");
+                      $result = mysqli_fetch_assoc($data);
+                      echo $result["total"] ?? 0;
+                      ?>
                     </h5>
                   </div>
                 </div>
@@ -107,7 +115,11 @@ if (!is_logged_in()) {
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Artikel</p>
                     <h5 class="font-weight-bolder">
-                      3
+                      <?php
+                      $data = mysqli_query($koneksi, "SELECT COUNT(*) as total FROM artikel");
+                      $result = mysqli_fetch_assoc($data);
+                      echo $result["total"] ?? 0;
+                      ?>
                     </h5>
                   </div>
                 </div>

@@ -49,7 +49,9 @@ $routes = [
     '/dashboard/artikel' => 'routes/dashboard/artikel.php',
     '/dashboard/artikel/create' => 'routes/dashboard/action/tambah_artikel.php',
     '/dashboard/artikel/edit' => 'routes/dashboard/action/edit_artikel.php',
-    '/dashboard/artikel/delete' => 'routes/dashboard/action/hapus_artikel.php'
+    '/dashboard/artikel/delete' => 'routes/dashboard/action/hapus_artikel.php',
+    // Utility
+    '/assets' => 'routes/storage.php'
 ];
 
 // Resolve the requested page from the route map
