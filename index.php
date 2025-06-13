@@ -46,6 +46,8 @@ $routes = [
     '/dashboard/hasil_panen/edit' => 'routes/dashboard/action/edit_hasil_panen.php',
     '/dashboard/hasil_panen/delete' => 'routes/dashboard/action/hapus_hasil_panen.php',
     // Artikel
+    '/artikel' => 'routes/artikel.php',
+    '/artikel/baca' => 'routes/baca_artikel.php',
     '/dashboard/artikel' => 'routes/dashboard/artikel.php',
     '/dashboard/artikel/create' => 'routes/dashboard/action/tambah_artikel.php',
     '/dashboard/artikel/edit' => 'routes/dashboard/action/edit_artikel.php',

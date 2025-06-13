@@ -70,7 +70,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM artikel");
                     <tr>
                       <td><?= $no++ ?></td>
                       <td><?= htmlspecialchars($value["title"]) ?></td>
-                      <td style="word-break: break-word;"><?= htmlspecialchars($value["body"]) ?></td>
+                      <td style="word-break: break-word;"><?= htmlspecialchars(substr($value["body"], 0, 60)) ?>...</td>
                       <td class="text-center">
                         <?= $value["thumbnail"] ? '<img width="80px" height="80px" src="data:image/png;base64,' . $value["thumbnail"] . '" alt="Gambar" />' : "Tidak ada foto" ?>
                       </td>
