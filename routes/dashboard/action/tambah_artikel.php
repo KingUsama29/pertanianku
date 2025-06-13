@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($judul && $konten && !$error) {
         $stmt = mysqli_prepare($koneksi, "INSERT INTO artikel (id, title, body, thumbnail, user_id) VALUES (?, ?, ?, ?, ?)");
-        $userId = 1;
+        $userId = $_SESSION["id"];
         $artikel_id = generateRandomString(10);
         mysqli_stmt_bind_param($stmt, "ssssi", $artikel_id, $judul, $konten, $thumbnail, $userId);
         if (mysqli_stmt_execute($stmt)) {
@@ -71,16 +71,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="min-height-300 bg-dark position-absolute w-100"></div>
     <?php include_once APP . "/components/layout/dashboard/sidebar.php" ?>
     <main class="main-content position-relative border-radius-lg">
-        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur">
+        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="#">Dashboard</a></li>
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="#">Daftar Komoditas</a></li>
-                        <li class="breadcrumb-item text-sm text-white active" aria-current="page">Tambah Komoditas</li>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Dashboard</a></li>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Artikel</a></li>
+                        <li class="breadcrumb-item text-sm text-white active" aria-current="page">Tambah Artikel</li>
                     </ol>
-                    <h6 class="font-weight-bolder text-white mb-0">Tambah Komoditas</h6>
+                    <!-- <h6 class="font-weight-bolder text-white mb-0">Tambah Komoditas</h6> -->
                 </nav>
+                <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                    <ul class="navbar-nav  justify-content-end">
+                        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
+                            <div class="sidenav-toggler-inner">
+                            <i class="sidenav-toggler-line bg-white"></i>
+                            <i class="sidenav-toggler-line bg-white"></i>
+                            <i class="sidenav-toggler-line bg-white"></i>
+                            </div>
+                        </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -89,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h6 class="mb-0">Form Tambah Komoditas</h6>
+                            <h6 class="mb-0">Form Tambah Artikel</h6>
                         </div>
                         <div class="card-body">
                             <?php if ($success): ?>
@@ -109,11 +122,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
+                                        <label>Konten</label>
                                         <textarea class="form-control" name="konten"></textarea>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Tambah</button>
-                                <a href="/dashboard/hasil_panen" class="btn btn-secondary">Kembali</a>
+                                <a href="/dashboard/artikel" class="btn btn-secondary">Kembali</a>
                             </form>
                         </div>
                     </div>

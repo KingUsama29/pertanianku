@@ -17,14 +17,6 @@
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link " href="/dashboard/daftar_petani">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="fa-solid fa-user text-dark text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Daftar Petani</span>
-          </a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link " href="/dashboard/hasil_panen">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -43,14 +35,6 @@
         </li>
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Profile</h6>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/profile.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="fa-solid fa-gear text-dark text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Settings</span>
-          </a>
         </li>
         <li class="nav-item">
           <a class="nav-link " href="/logout">

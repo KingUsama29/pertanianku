@@ -1,24 +1,33 @@
 <?php
+$error = "";
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Contoh akun dummy
-
     if (isset($_POST["login"])) {
-        $users = [
-            'admin' => ['password' => 'admin123', 'role' => 'admin'],
-            'petani1' => ['password' => 'petani123', 'role' => 'petani'],
-        ];
-
         $username = htmlspecialchars($_POST['username']) ?? '';
-        $password = htmlspecialchars($_POST['password']) ?? '';
+        $password = md5($_POST['password']) ?? '';
 
-        if (isset($users[$username]) && $users[$username]['password'] === $password) {
-            $_SESSION['username'] = $username;
-            $_SESSION['role'] = $users[$username]['role'];
-            echo "<script>alert('Login berhasil. Selamat datang, " . $username . "')</script>";
-            echo "<script>window.location.href='/dashboard'</script>";
-            exit;
+        // Ambil data user dari database
+        $stmt = mysqli_prepare($koneksi, "SELECT * FROM pengguna WHERE username = ?");
+        mysqli_stmt_bind_param($stmt, "s", $username);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        if ($row = mysqli_fetch_assoc($result)) {
+            // Verifikasi password
+            if ($password === $row["password"]) {
+                // Simpan data login ke session
+                $_SESSION['id'] = $row['id'];
+                $_SESSION['username'] = $row['username'];
+                $_SESSION['role'] = $row['role'];
+
+                echo "<script>alert('Login berhasil. Selamat datang, " . $row['username'] . "')</script>";
+                echo "<script>window.location.href='/dashboard'</script>";
+                exit;
+            } else {
+                $error = 'Password salah!';
+            }
         } else {
-            $error = 'Username atau password salah!';
+            $error = 'Username tidak ditemukan!';
         }
     }
 }

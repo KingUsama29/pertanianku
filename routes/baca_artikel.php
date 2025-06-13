@@ -30,11 +30,11 @@ if (!$data) {
     <nav aria-label="Navigasi utama">
       <div class="logo" tabindex="0">Pertanianku</div>
       <ul class="nav-links">
-        <li><a href="index.php#hero">Home</a></li>
-        <li><a href="index.php#penanganan">Article</a></li>
-        <li><a href="index.php#cuaca">Wheater</a></li>
-        <li><a href="index.php#harga">Price</a></li>
-        <li><a href="index.phplogin.php">Login</a></li>
+        <li><a href="/">Beranda</a></li>
+        <li><a href="/#penanganan">Artikel</a></li>
+        <li><a href="/#cuaca">Cuaca</a></li>
+        <li><a href="/#harga">Harga</a></li>
+        <li><a href="/login">Login</a></li>
       </ul>
       <div class="hamburger">
         <span></span>
